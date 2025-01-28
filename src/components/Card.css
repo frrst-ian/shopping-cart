@@ -4,3 +4,14 @@
     object-fit: contain;
     margin-bottom: 10px;
   }
+
+  .cards {
+    border: 2px solid black;
+    border-radius: 10px;
+    
+    text-align: center;
+  }
+
+  img {
+    margin: 12px auto 0 auto;
+  }
