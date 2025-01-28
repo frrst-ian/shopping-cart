@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useEffect } from "react";
 import { Card } from "./components/Card";
+import './App.css'
 
 const App = () => {
   const [cards, setCards] = useState([]);
@@ -24,17 +25,22 @@ const App = () => {
   };
 
   return (
-    <div className="card-wrapper">
-      {cards.map((card) => (
-        <Card
-          key={card.id}
-          card={card}
-          image={card.image}
-          title={card.title}
-          price={card.price}
-          rating={card.rating}
-        ></Card>
-      ))}
+    <div className="App">
+      <div className="card-list">
+        <h1>Electriko Shop</h1>
+        <div className="card-wrapper">
+          {cards.map((card) => (
+            <Card
+              key={card.id}
+              card={card}
+              image={card.image}
+              title={card.title}
+              price={card.price}
+              rating={card.rating}
+            ></Card>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

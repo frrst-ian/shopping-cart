@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-
+import './Card.css'
 export const Card = ({ title, price, rating, image }) => {
   return (
     <div className="cards">
