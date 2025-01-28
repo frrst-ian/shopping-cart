@@ -9,6 +9,11 @@ export const Card = ({ title, price, rating, image }) => {
       <p>
         Rating: {rating?.rate} ({rating?.count} reviews)
       </p>
+      <div className="input-counter">
+                <span className="minus">-</span>
+                <input type="number" className="number" />
+                <span className="plus">+</span>
+              </div>
     </div>
   );
 };
