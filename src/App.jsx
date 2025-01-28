@@ -26,14 +26,14 @@ const App = () => {
   return (
     <div className="card-wrapper">
       {cards.map((card) => (
-        <Card key={card.id} card={card}>
-          <img src={card.image} alt={card.title} className="product-image" />
-          <h3>{card.title}</h3>
-          <p>{card.price}</p>
-          <p>
-            Rating: {card.rating?.rate} ({card.rating?.count} reviews)
-          </p>
-        </Card>
+        <Card
+          key={card.id}
+          card={card}
+          image={card.image}
+          title={card.title}
+          price={card.price}
+          rating={card.rating}
+        ></Card>
       ))}
     </div>
   );
