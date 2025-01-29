@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
-import "./Card.css";
 import { Button } from "./Button";
 import { Input } from "./Input";
+import "./Card.css";
 
 export const Card = ({ title, price, rating, image }) => {
   const [count, setCount] = useState(0);
