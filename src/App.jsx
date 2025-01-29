@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Navigation } from "./components/Navigation";
-import { Cart } from "./components/Cart";
-import { HomePage } from "./components/Homepage";
+import { routes } from "./Routes"; 
 import "./App.css";
 
 const App = () => {
@@ -9,10 +8,11 @@ const App = () => {
     <Router>
       <div className="App">
         <Navigation />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/Cart" element={<Cart />} />
-        </Routes>
+          <Routes>
+            {routes.map((route, index) => (
+              <Route key={index} path={route.path} element={route.element} />
+            ))}
+          </Routes>
       </div>
     </Router>
   );
