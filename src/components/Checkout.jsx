@@ -1,9 +1,11 @@
 import PropTypes from "prop-types";
-import './Checkout.css'
+import "./Checkout.css";
 
 export const Checkout = ({ cartItems, onClose }) => {
   const calculateTotal = () => {
-    return cartItems.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
+    return cartItems
+      .reduce((total, item) => total + item.price * item.quantity, 0)
+      .toFixed(2);
   };
 
   return (
@@ -29,7 +31,7 @@ export const Checkout = ({ cartItems, onClose }) => {
       </div>
     </div>
   );
-};
+};  
 
 Checkout.propTypes = {
   cartItems: PropTypes.arrayOf(

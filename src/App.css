@@ -96,7 +96,7 @@ body {
 }
 
 .App {
-  height: 90vh;
+  height: 100vh;
 }
 
 .cart-icon {
@@ -106,4 +106,8 @@ body {
 
 #root {
   font-family: 'Fira Sans' , serif;
+}
+
+footer > p {
+  font-style: none;
 }
