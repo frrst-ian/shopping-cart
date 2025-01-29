@@ -4,7 +4,29 @@ import "./Card.css";
 import { Button } from "./Button";
 import { Input } from "./Input";
 
-export const Card = ({ title, price, rating, image,decrement,increment }) => {
+export const Card = ({ title, price, rating, image }) => {
+  const [count, setCount] = useState(0);
+
+  const decrement = () => {
+    return setCount((prev) => (prev > 0 ? prev - 1 : 0));
+  };
+
+  const increment = () => {
+    setCount((prev) => prev + 1);
+  };
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+
+    if (value === "") {
+      setCount("");
+      return;
+    }
+    const parsedValue = Math.max(0, parseInt(value, 10));
+    if (!isNaN(parsedValue)) {
+      setCount(parsedValue);
+    }
+  };
 
   return (
     <div className="cards">
@@ -15,13 +37,18 @@ export const Card = ({ title, price, rating, image,decrement,increment }) => {
         Rating: {rating?.rate} ({rating?.count} reviews)
       </p>
       <div className="input-counter">
-        <Button variant="secondary">-</Button>
+        <Button variant="secondary" onClick={decrement}>
+          -
+        </Button>
         <Input
           type="number"
-          value={number}
-          onChange={(e) => setNumber(e.target.value)}
+          label="Number"
+          value={count}
+          onChange={handleChange}
         ></Input>
-        <Button variant="secondary">+</Button>
+        <Button variant="secondary" onClick={increment}>
+          +
+        </Button>
       </div>
     </div>
   );

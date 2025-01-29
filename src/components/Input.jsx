@@ -7,18 +7,17 @@ export const Input = ({
   placeholder,
   value,
   onChange,
-  min,
   ...props
 }) => {
+  const inputType = type === "number" && value === "" ? "text" : type;
   return (
     <div className="input-container">
       <input
-        type={type}
+        type={inputType}
         className="input-field"
         placeholder={placeholder}
         value={value}
         onChange={onChange}
-        min={0}
         {...props}
       />
     </div>
@@ -30,7 +29,6 @@ Input.propTypes = {
   placeholder: PropTypes.string,
   value: PropTypes.any.isRequired,
   onChange: PropTypes.func.isRequired,
-  min: PropTypes.number,
 };
 
 Input.defaultProps = {
