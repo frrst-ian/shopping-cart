@@ -1,29 +1,48 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable react-refresh/only-export-components */
+// eslint-disable-next-line no-unused-vars
 import React, { createContext, useContext, useState } from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  const [cartCount, setCartCount] = useState(0);
+  const [cartItems, setCartItems] = useState([]);
 
-  const addToCart = () => {
-    setCartCount((prev) => prev + 1);
+  const addToCart = (product) => {
+    const existingItem = cartItems.find((item) => item.title === product.title);
+    if (existingItem) {
+      setCartItems((prev) =>
+        prev.map((item) =>
+          item.title === product.title
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        )
+      );
+    } else {
+      setCartItems((prev) => [...prev, { ...product, quantity: 1 }]);
+    }
   };
 
-  const removeFromCart = () => {
-    setCartCount((prev) => (prev > 0 ? prev - 1 : 0));
+  const removeFromCart = (product) => {
+    setCartItems((prev) =>
+      prev
+        .map((item) =>
+          item.title === product.title
+            ? { ...item, quantity: item.quantity - 1 }
+            : item
+        )
+        .filter((item) => item.quantity > 0)
+    );
   };
 
   return (
-    <CartContext.Provider value={{ cartCount, addToCart, removeFromCart }}>
+    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart }}>
       {children}
     </CartContext.Provider>
   );
 };
 
 CartProvider.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
-// eslint-disable-next-line react-refresh/only-export-components
 export const useCart = () => useContext(CartContext);

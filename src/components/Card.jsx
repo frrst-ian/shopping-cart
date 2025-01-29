@@ -12,13 +12,13 @@ export const Card = ({ title, price, rating, image }) => {
   const decrement = () => {
     if (count > 0) {
       setCount((prev) => prev - 1);
-      removeFromCart(); // Remove one item from the cart
+      removeFromCart({ title, price, quantity: 1 });
     }
   };
 
   const increment = () => {
     setCount((prev) => prev + 1);
-    addToCart(); // Add one item to the cart
+    addToCart({ title, price, quantity: 1 });
   };
 
   const handleChange = (e) => {
