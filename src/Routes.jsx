@@ -7,7 +7,7 @@ export const routes = [
     element: <HomePage />,
   },
   {
-    path: "/cart",
+    path: "/shop",
     element: <Shop />,
   },
 ];

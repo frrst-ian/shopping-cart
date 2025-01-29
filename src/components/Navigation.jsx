@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { ShoppingCart } from "lucide-react";
+
 import "./Navigation.css";
 
 export const Navigation = () => {
@@ -9,8 +11,13 @@ export const Navigation = () => {
           <div>
             <Link to="/">Home</Link>
           </div>
-          <div>
-            <Link to="/cart">Cart</Link>
+          <div className="nav-right">
+            <div>
+              <Link to="/shop">Shop</Link>
+            </div>
+            <div className="cart-icon">
+              <ShoppingCart />
+            </div>
           </div>
         </div>
       </nav>
