@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import PropTypes from "prop-types";
 import "./Input.css";
 
@@ -29,9 +28,4 @@ Input.propTypes = {
   placeholder: PropTypes.string,
   value: PropTypes.any.isRequired,
   onChange: PropTypes.func.isRequired,
-};
-
-Input.defaultProps = {
-  type: "text",
-  placeholder: "",
 };

@@ -1,5 +1,5 @@
-import {HomePage} from './components/Homepage'
-import {Cart} from './components/Cart'
+import { HomePage } from "./components/Homepage";
+import { Shop } from "./components/Shop";
 
 export const routes = [
   {
@@ -8,6 +8,6 @@ export const routes = [
   },
   {
     path: "/cart",
-    element: <Cart />,
+    element: <Shop />,
   },
 ];

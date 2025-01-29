@@ -1,6 +1,7 @@
 import { Card } from "./Card";
 import { useState, useEffect } from "react";
-export const Cart = () => {
+import "./Shop.css";
+export const Shop = () => {
   const [cards, setCards] = useState([]);
 
   useEffect(() => {

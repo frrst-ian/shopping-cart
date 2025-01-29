@@ -5,12 +5,14 @@ export const Navigation = () => {
   return (
     <div className="nav-container">
       <nav className="nav">
-        <ul>
-          <li>
+        <div>
+          <div>
             <Link to="/">Home</Link>
+          </div>
+          <div>
             <Link to="/cart">Cart</Link>
-          </li>
-        </ul>
+          </div>
+        </div>
       </nav>
     </div>
   );

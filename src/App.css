@@ -67,11 +67,14 @@ h6 {
   isolation: isolate;
 }
 
+#root {
+  width: 100%;
+  height: 100vh;
+}
+
 body {
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
 }
 
 .card-wrapper {
@@ -87,4 +90,8 @@ body {
 }
 .card-list > h1 {
     text-align: center;
+}
+
+.App {
+  height: 90vh;
 }
