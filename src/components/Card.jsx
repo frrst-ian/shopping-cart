@@ -1,6 +1,11 @@
 import PropTypes from "prop-types";
-import './Card.css'
-export const Card = ({ title, price, rating, image }) => {
+import { useState } from "react";
+import "./Card.css";
+import { Button } from "./Button";
+import { Input } from "./Input";
+
+export const Card = ({ title, price, rating, image,decrement,increment }) => {
+
   return (
     <div className="cards">
       <img src={image} alt={title} className="product-image" />
@@ -10,10 +15,14 @@ export const Card = ({ title, price, rating, image }) => {
         Rating: {rating?.rate} ({rating?.count} reviews)
       </p>
       <div className="input-counter">
-                <span className="minus">-</span>
-                <input type="number" className="number" />
-                <span className="plus">+</span>
-              </div>
+        <Button variant="secondary">-</Button>
+        <Input
+          type="number"
+          value={number}
+          onChange={(e) => setNumber(e.target.value)}
+        ></Input>
+        <Button variant="secondary">+</Button>
+      </div>
     </div>
   );
 };

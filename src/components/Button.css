@@ -1,0 +1,7 @@
+.btn {
+    max-width: 20px;
+    height: 30px;
+    border: 1px solid black;
+
+    cursor: pointer;
+}

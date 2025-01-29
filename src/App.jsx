@@ -5,10 +5,19 @@ import "./App.css";
 
 const App = () => {
   const [cards, setCards] = useState([]);
+  const [count, setCount] = useState(0);
 
-  useEffect(() => {
-    fetchCards();
-  }, []);
+  const decrement = () => {
+    return setCount((prev) => (prev > 0 ? prev - 1 : 0));
+  };
+
+  const increment = () => {
+    setCount(prev => prev + 1);
+  }
+  
+    useEffect(() => {
+      fetchCards();
+    }, []);
 
   const fetchCards = async () => {
     try {

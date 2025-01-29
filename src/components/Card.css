@@ -15,3 +15,10 @@
   img {
     margin: 12px auto 0 auto;
   }
+
+  .input-counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
