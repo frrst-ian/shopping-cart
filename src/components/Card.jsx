@@ -2,17 +2,23 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import { Button } from "./Button";
 import { Input } from "./Input";
+import { useCart } from "./CartContext";
 import "./Card.css";
 
 export const Card = ({ title, price, rating, image }) => {
   const [count, setCount] = useState(0);
+  const { addToCart, removeFromCart } = useCart();
 
   const decrement = () => {
-    return setCount((prev) => (prev > 0 ? prev - 1 : 0));
+    if (count > 0) {
+      setCount((prev) => prev - 1);
+      removeFromCart(); // Remove one item from the cart
+    }
   };
 
   const increment = () => {
     setCount((prev) => prev + 1);
+    addToCart(); // Add one item to the cart
   };
 
   const handleChange = (e) => {
