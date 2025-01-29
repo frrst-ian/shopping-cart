@@ -75,6 +75,7 @@ h6 {
 body {
   height: 100vh;
   width: 100%;
+  background-color: #1e293b;
 }
 
 .card-wrapper {
@@ -94,4 +95,9 @@ body {
 
 .App {
   height: 90vh;
+}
+
+.cart-icon {
+  color: white;
+  font-size: 18px;
 }

@@ -1,7 +1,10 @@
-.btn {
-    max-width: 20px;
-    height: 30px;
-    border: 1px solid black;
-
+button.btn.btn-secondary {
+    width: 40px;
+    font-size: 18px;
     cursor: pointer;
+
+    background-color: rgb(86, 73, 255);
+    color: whitesmoke;
+    border: none;
+    border-radius: 4px;
 }

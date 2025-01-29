@@ -35,13 +35,15 @@ export const Card = ({ title, price, rating, image }) => {
   };
 
   return (
-    <div className="cards">
-      <img src={image} alt={title} className="product-image" />
-      <h3>{title}</h3>
-      <p>${price}</p>
-      <p>
-        Rating: {rating?.rate} ({rating?.count} reviews)
-      </p>
+    <div className="main-wrapper">
+      <div className="cards">
+        <img src={image} alt={title} className="product-image" />
+        <h3>{title}</h3>
+        <p>${price}</p>
+        <p>
+          Rating: {rating?.rate} ({rating?.count} reviews)
+        </p>
+      </div>
       <div className="input-counter">
         <Button variant="secondary" onClick={decrement}>
           -

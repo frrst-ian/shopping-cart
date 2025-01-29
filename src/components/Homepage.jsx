@@ -3,7 +3,7 @@ export const HomePage = () => {
   return (
     <div className="homepage-wrapper">
       <div>
-        <h1>Welcome to Shopping Cart</h1>
+        <h1>Welcome to Turing Tech</h1>
       </div>
     </div>
   );

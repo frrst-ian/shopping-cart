@@ -32,7 +32,7 @@ export const Shop = () => {
   if (error) return <div>Error: {error}</div>;
   return (
     <div className="card-list">
-      <h1>Electriko Shop</h1>
+      <h1>Turing Tech</h1>
       <div className="card-wrapper">
         {cards.map((card) => (
           <Card

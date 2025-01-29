@@ -20,6 +20,7 @@ div > a {
   text-decoration: none;
   color: black;
   font-size: 24px;
+  color: whitesmoke;
 }
 
 .nav-right {
@@ -33,5 +34,10 @@ div > a {
     justify-content: center;
     cursor: pointer;
 }
+
+svg {
+    color: white;
+}
+
 
 
